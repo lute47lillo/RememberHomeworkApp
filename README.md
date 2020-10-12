@@ -1,4 +1,4 @@
-**REMEMBER MY HOMEWORK APP**
+REMEMBER MY HOMEWORK APP
   
     This is my first iOS app. It is written in **Swift** language using the **Realm** database. It is a basic app which funcionalites are:
       

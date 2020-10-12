@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -28,11 +29,14 @@
                                         <rect key="frame" x="158" y="10" width="50" height="50"/>
                                         <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                         <edgeInsets key="layoutMargins" top="53" left="8" bottom="8" right="8"/>
-                                        <state key="normal" backgroundImage="the week pic">
+                                        <state key="normal" image="the week pic" backgroundImage="the week pic">
                                             <color key="titleColor" systemColor="labelColor"/>
                                             <color key="titleShadowColor" name="AccentColor"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="medium"/>
                                         </state>
+                                        <connections>
+                                            <action selector="SelectWeekButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="AjK-3b-N2p"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
@@ -75,20 +79,132 @@
                             <constraint firstItem="o00-hy-cVl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="146" id="zMx-m2-QTd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="BEf-40-Vf7" kind="show" identifier="nv_vc" id="UqF-tA-u3Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="334.78260869565219" y="81.696428571428569"/>
         </scene>
+        <!--To Do Homework-->
+        <scene sceneID="WvM-Sn-IWl">
+            <objects>
+                <viewController storyboardIdentifier="week_vc" id="qRN-4U-owa" customClass="WeekSelectorView" customModule="HomeworkRemember" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YR4-pD-Dl3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AZV-1S-lhN">
+                                <rect key="frame" x="0.0" y="108" width="414" height="700"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lrt-gR-Raz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lrt-gR-Raz" firstAttribute="trailing" secondItem="AZV-1S-lhN" secondAttribute="trailing" id="BFj-fu-N23"/>
+                            <constraint firstItem="AZV-1S-lhN" firstAttribute="leading" secondItem="lrt-gR-Raz" secondAttribute="leading" id="DoU-wA-Au6"/>
+                            <constraint firstItem="AZV-1S-lhN" firstAttribute="top" secondItem="lrt-gR-Raz" secondAttribute="top" id="c6a-3V-Rlz"/>
+                            <constraint firstItem="lrt-gR-Raz" firstAttribute="bottom" secondItem="AZV-1S-lhN" secondAttribute="bottom" id="nOl-1A-uNF"/>
+                            <constraint firstItem="AZV-1S-lhN" firstAttribute="top" secondItem="lrt-gR-Raz" secondAttribute="top" id="v4I-MW-rkC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="To Do Homework" id="eFW-ur-hXW">
+                        <barButtonItem key="rightBarButtonItem" width="109" id="ZBP-uq-fvc">
+                            <imageReference key="image" image="note.text.badge.plus" catalog="system" symbolScale="large" renderingMode="template"/>
+                            <inset key="largeContentSizeImageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-54"/>
+                            <connections>
+                                <action selector="addHomework" destination="qRN-4U-owa" id="D0Z-nn-Ofy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableDo" destination="AZV-1S-lhN" id="brh-Pe-CSh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OJf-Ec-qpU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2065.217391304348" y="81.696428571428569"/>
+        </scene>
+        <!--InputHW View-->
+        <scene sceneID="TRy-xc-FY9">
+            <objects>
+                <viewController storyboardIdentifier="input_hw_vc" id="CpI-nr-C8x" customClass="inputHWView" customModule="HomeworkRemember" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KhD-qg-gcn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="DVZ-V5-Vgg">
+                                <rect key="frame" x="0.0" y="355" width="414" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </datePicker>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mTP-dP-3X3">
+                                <rect key="frame" x="87" y="240" width="258" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="b3P-uF-rNM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="DVZ-V5-Vgg" id="e6q-Ip-LfW"/>
+                        <outlet property="textAdd" destination="mTP-dP-3X3" id="xQo-fu-xM0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9KD-Vb-iM0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2850.7246376811595" y="106.47321428571428"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Bvv-ON-Doi">
+            <objects>
+                <viewController id="TIh-Xu-GCB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ifp-bl-fj6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="gWi-uf-wk9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sOk-Uv-2n0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3726" y="98"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="d8m-9u-I0F">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BEf-40-Vf7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="p4O-PI-mkG"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="ZaY-Wa-8lq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qRN-4U-owa" kind="relationship" relationship="rootViewController" id="UPb-Bi-jMB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x7p-iy-BFf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1155.072463768116" y="81.696428571428569"/>
+        </scene>
     </scenes>
     <resources>
         <image name="background app" width="1080" height="1920"/>
+        <image name="note.text.badge.plus" catalog="system" width="128" height="108"/>
         <image name="the week pic" width="225" height="225"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tertiarySystemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

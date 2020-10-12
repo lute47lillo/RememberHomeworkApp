@@ -50,7 +50,28 @@ class WeekSelectorView: UIViewController, UITableViewDelegate, UITableViewDataSo
     //Open for item and delete
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        //Get Assignment selected
+        let inAssig = items[indexPath.row]
+        
+        //Move to view of that item.
+        guard let indvVC = storyboard?.instantiateViewController(identifier: "indiv_vc") as? individualHomeworkVC else {
+            return
+        }
+        
+        //Set item to work of that view. (Work, item and Assignment are keywords refering to same concept of "Homework"
+        
+        indvVC.work = inAssig
+        indvVC.deleteHandler = { [weak self] in
+            self?.refresh()
+        }
+        
+        
+        indvVC.navigationItem.largeTitleDisplayMode = .never
+        indvVC.title = inAssig.item   //Set title to Item Name of that individual Assignment
+        navigationController?.pushViewController(indvVC, animated: true)
     }
+    
    
     @IBAction func addHomework(){
         guard let vc = storyboard?.instantiateViewController(identifier: "input_hw_vc") as? inputHWView else{

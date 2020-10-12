@@ -54,6 +54,7 @@ class inputHWView: UIViewController, UITextFieldDelegate {
             try! realm.commitWrite()
             //The ? indicates that the save Handler is optional
             saveHandler?()
+            navigationController?.popToRootViewController(animated: true)
             
         }else{
             return

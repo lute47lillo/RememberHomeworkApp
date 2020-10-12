@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7F05180D99858D5744B51689 /* Pods_HomeworkRemember.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE196C4FF64994AA0470F2B /* Pods_HomeworkRemember.framework */; };
+		F34E80A62533E54A002BDFDB /* individualHomeworkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E80A52533E54A002BDFDB /* individualHomeworkVC.swift */; };
 		F36D8274253125AA00691A5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36D8273253125AA00691A5F /* AppDelegate.swift */; };
 		F36D8276253125AA00691A5F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36D8275253125AA00691A5F /* SceneDelegate.swift */; };
 		F36D8278253125AA00691A5F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36D8277253125AA00691A5F /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 		43275CE4B52DCC3D0F98364B /* Pods-HomeworkRemember.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeworkRemember.debug.xcconfig"; path = "Target Support Files/Pods-HomeworkRemember/Pods-HomeworkRemember.debug.xcconfig"; sourceTree = "<group>"; };
 		6EE196C4FF64994AA0470F2B /* Pods_HomeworkRemember.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeworkRemember.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BD0045476E3E43EC493B3AD /* Pods-HomeworkRemember.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeworkRemember.release.xcconfig"; path = "Target Support Files/Pods-HomeworkRemember/Pods-HomeworkRemember.release.xcconfig"; sourceTree = "<group>"; };
+		F34E80A52533E54A002BDFDB /* individualHomeworkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = individualHomeworkVC.swift; sourceTree = "<group>"; };
 		F36D8270253125AA00691A5F /* HomeworkRemember.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeworkRemember.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F36D8273253125AA00691A5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F36D8275253125AA00691A5F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				F36D8277253125AA00691A5F /* ViewController.swift */,
 				F36D828825328B6700691A5F /* WeekSelectorView.swift */,
 				F3A0930F2533869C00A46A9E /* inputHWView.swift */,
+				F34E80A52533E54A002BDFDB /* individualHomeworkVC.swift */,
 				F36D8279253125AA00691A5F /* Main.storyboard */,
 				F36D827C253125AB00691A5F /* Assets.xcassets */,
 				F36D827E253125AB00691A5F /* LaunchScreen.storyboard */,
@@ -212,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3A093102533869C00A46A9E /* inputHWView.swift in Sources */,
+				F34E80A62533E54A002BDFDB /* individualHomeworkVC.swift in Sources */,
 				F36D8278253125AA00691A5F /* ViewController.swift in Sources */,
 				F36D828925328B6700691A5F /* WeekSelectorView.swift in Sources */,
 				F36D8274253125AA00691A5F /* AppDelegate.swift in Sources */,
